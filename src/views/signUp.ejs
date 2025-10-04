@@ -1,0 +1,32 @@
+<%- include('partials/head', { title: 'Sign Up' }) %>
+<h4>Registro</h4>
+<div class="row">
+  <form class="col s12" id="formSignUp">
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="name" required /><label for="name">Nombre</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="lastName" required /><label for="lastName">Apellido</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="phoneNumber" required /><label for="phoneNumber">Teléfono</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="birthdate" type="date" required /><label class="active" for="birthdate">Fecha de nacimiento</label>
+      </div>
+    </div>
+    <div class="input-field">
+      <input id="email" type="email" required /><label for="email">Email</label>
+    </div>
+    <div class="input-field">
+      <input id="password" type="password" required />
+      <label for="password">Password</label>
+      <span class="helper-text">Mín 8, 1 mayúscula, 1 dígito, 1 especial (# $ % & * @)</span>
+    </div>
+    <button class="btn green" type="submit">Registrar</button>
+  </form>
+</div>
+<%- include('partials/foot') %>
