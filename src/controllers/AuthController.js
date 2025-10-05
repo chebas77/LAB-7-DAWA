@@ -5,9 +5,22 @@ class AuthController {
     async signUp(req, res, next) {
         try {
             const payload = req.body;
-            if (!payload.email || !payload.password) 
-                return res.status(400).json({ message: 'El email y password son requeridos' });
-            
+            const requiredFields = ['email', 'password', 'name', 'lastName', 'phoneNumber', 'birthdate'];
+            const fieldLabels = {
+                email: 'email',
+                password: 'password',
+                name: 'nombre',
+                lastName: 'apellido',
+                phoneNumber: 'teléfono',
+                birthdate: 'fecha de nacimiento'
+            };
+            const missing = requiredFields
+                .filter(field => !payload[field])
+                .map(field => fieldLabels[field] || field);
+
+            if (missing.length > 0)
+                return res.status(400).json({ message: `Campos requeridos faltantes: ${missing.join(', ')}` });
+
             const user = await authService.signUp(payload);
             return res.status(201).json(user);
         } catch (err) {

@@ -1,7 +1,30 @@
 <%- include('partials/head', { title: 'Dashboard Admin' }) %>
 <h4>Panel de Administración</h4>
 <table class="striped">
-  <thead><tr><th>Nombre</th><th>Email</th><th>Rol(es)</th><th>Registro</th></tr></thead>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Rol(es)</th>
+      <th>Registro</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
   <tbody id="usersTbody"></tbody>
 </table>
+
+<div id="userDetailCard" class="card" style="display:none; margin-top:20px;">
+  <div class="card-content">
+    <span class="card-title" id="detailTitle"></span>
+    <p id="detailEmail" class="grey-text"></p>
+    <p><strong>Teléfono:</strong> <span id="detailPhone"></span></p>
+    <p><strong>Fecha de nacimiento:</strong> <span id="detailBirthdate"></span></p>
+    <p><strong>Dirección:</strong> <span id="detailAdress"></span></p>
+    <p><strong>URL Perfil:</strong> <span id="detailUrl"></span></p>
+    <p><strong>Roles:</strong> <span id="detailRoles"></span></p>
+    <p><strong>Edad:</strong> <span id="detailAge"></span></p>
+    <p><strong>Registrado:</strong> <span id="detailCreated"></span></p>
+  </div>
+</div>
+
 <%- include('partials/foot') %>

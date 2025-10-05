@@ -1,4 +1,8 @@
-<%- include('partials/head', { title: '404' }) %>
-<h4>404 – No encontrada</h4>
-<p>La página que intentas visitar no existe.</p>
+<%- include('partials/head', { title: status || '404' }) %>
+<h4>
+  <%= status || 404 %>
+  –
+  <%= (status || 404) === 404 ? 'No encontrada' : 'Ha ocurrido un error' %>
+</h4>
+<p><%= typeof message !== 'undefined' ? message : 'La página que intentas visitar no existe.' %></p>
 <%- include('partials/foot') %>

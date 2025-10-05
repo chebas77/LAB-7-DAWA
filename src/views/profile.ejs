@@ -1,5 +1,47 @@
 <%- include('partials/head', { title: 'Mi cuenta' }) %>
 <h4>Mi cuenta</h4>
 <p id="whoami" class="grey-text"></p>
+
+<div class="row">
+  <form id="formProfile" class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="profileName" required />
+        <label for="profileName">Nombre</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="profileLastName" required />
+        <label for="profileLastName">Apellido</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="profilePhoneNumber" required />
+        <label for="profilePhoneNumber">Teléfono</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="profileBirthdate" type="date" required />
+        <label class="active" for="profileBirthdate">Fecha de nacimiento</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="profileAdress" />
+        <label for="profileAdress">Dirección</label>
+      </div>
+      <div class="input-field col s6">
+        <input id="profileUrl" type="url" />
+        <label for="profileUrl">URL Perfil</label>
+      </div>
+    </div>
+    <div class="input-field">
+      <input id="profileEmail" type="email" readonly />
+      <label for="profileEmail">Email (solo lectura)</label>
+    </div>
+    <button class="btn blue" type="submit">Guardar cambios</button>
+  </form>
+</div>
+
+<h5>Resumen</h5>
 <ul class="collection" id="profileList"></ul>
 <%- include('partials/foot') %>

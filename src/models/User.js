@@ -7,7 +7,7 @@ const passwordRegex =
 const UserSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, trim: true },
-    lastName: { type: String, required: true, trim: true },             // nuevo
+    lastName: { type: String, required: true, trim: true },         // nuevo
     email: { type: String, required: true, unique: true, lowercase: true, trim: true },
     password: {
       type: String,
@@ -21,10 +21,18 @@ const UserSchema = new mongoose.Schema(
     phoneNumber: { type: String, required: true, trim: true },          // nuevo
     birthdate: { type: Date, required: true },                           // nuevo
     url_profile: { type: String },                                       // nuevo
-    adress: { type: String },                                            // nuevo (sic del enunciado)
+    adress: { type: String },        
+    phoneNumber: { type: String, required: true, trim: true },
+    birthdate: { type: Date, required: true },
+    url_profile: { type: String, trim: true },
+    adress: { type: String, trim: true },                                    // nuevo (sic del enunciado)
     roles: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Role' }]
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
+  }
 );
 
 // virtual de edad (útil para mostrar en Profile)
