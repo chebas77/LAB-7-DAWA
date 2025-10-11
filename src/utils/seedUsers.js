@@ -13,7 +13,7 @@ export default async function seedUsers() {
     }
 
     const saltRounds = parseInt(process.env.BCRYPT_SALT_ROUNDS ?? '10', 10);
-    const password = process.env.DEFAULT_ADMIN_PASSWORD || 'Admin#123';
+    const password = process.env.DEFAULT_ADMIN_PASSWORD || 'Admin#123456';
     const hashedPassword = await bcrypt.hash(password, saltRounds);
 
     await userRepository.create({
