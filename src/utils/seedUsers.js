@@ -24,9 +24,11 @@ export default async function seedUsers() {
         phoneNumber: '999999999',
         birthdate: new Date('1990-01-01'),
         adress: 'Oficina central',
+
         url_profile: 'https://example.com/admin',
         roles: [adminRole._id]
     });
 
+    
     console.log(`Seeded admin user (${adminEmail}). Default password configurable via DEFAULT_ADMIN_PASSWORD env var.`);
 }
